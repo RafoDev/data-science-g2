@@ -13,8 +13,7 @@ Para activar el entorno
 ```bash
 source venv/bin/activate # Unix-Like
 venv/Scripts/activate # Windows
-venv/Scripts/activate.bat # Windows
-venv/Scripts/Activate.ps1 # Windows
+. venv/Scripts/activate # Windows | Git Bash
 ```
 Para listar los paquetes instalados en el entorno
 ```bash
