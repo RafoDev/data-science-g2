@@ -1,4 +1,5 @@
 # Python + Mysql
+## Instrucciones para inicial el entorno virtual
 
 Para instalar el entorno virtual:
 ```bash
@@ -29,4 +30,15 @@ pip install -r requirements.txt
 Para desactivar el entorno
 ```bash
 deactivate
+```
+
+## Para configurar las variables de entorno
+
+Guiarse de `.env.template`. 
+El archivo `.env` debe tener el siguiente formato.
+
+```
+DB_HOST="examplehost"
+DB_USER="example"
+DB_PASSWORD="password"
 ```

@@ -8,7 +8,7 @@ with open('salida.txt', 'w') as file:
     if linea.lower() == 'salir':
       break
     file.write(linea + '\n')
-
+  # file.close()
 
 # Copiar contenido entre 2 archivos
 
