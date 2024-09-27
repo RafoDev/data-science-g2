@@ -24,11 +24,10 @@ try:
       # Para pedir que el cursor traiga toda la tabla
       tbl_rows = cursor.fetchall()
 
-      print(tabulate(tbl_rows, headers=["id", "title", "author", "genre", "release_date"]))
+      print(tabulate(tbl_rows, headers=cursor.column_names))
 
       # for row in tlb_rows:
       #   print(row)
-
 
 except Exception as error:
   print("Error: ", error)
