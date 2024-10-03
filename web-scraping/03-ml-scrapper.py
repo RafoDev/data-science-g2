@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
+url = f"https://listado.mercadolibre.com.pe/teclados"
+
 def page_to_file(url, filename):
   response = requests.get(url)
   if response.status_code == 200:
@@ -26,6 +28,8 @@ def get_products(query):
 
   product_list = html.find_all("li", {"class":"ui-search-layout__item shops__layout-item"})
 
+  products = []
+
   for product in product_list:
     element_title = product.h2
     
@@ -47,9 +51,29 @@ def get_products(query):
     variations_info = product.find(class_="poly-component__variations-text")
     product_variations = int(variations_info.string.split()[2]) if variations_info else 0
 
-    print((product_title, product_price, product_discount, product_free_shipping, product_rating, product_reviews, product_variations))
     # best seller
+    highlight_info = product.find(class_="poly-component__highlight")
+    # product_best_seller = False
 
-get_products("teclado")
+    # if highlight_info and highlight_info.string == "MÁS VENDIDO":
+    #     product_best_seller = True
+    
+    product_best_seller = True if highlight_info and highlight_info.string == "MÁS VENDIDO" else False
+
+    products.append((
+      product_title,
+      product_price,
+      product_free_shipping,
+      product_discount,
+      product_rating,
+      product_reviews,
+      product_variations,
+      product_best_seller
+    ))
+
+  return products
+
+products = get_products("teclado")
+print(products)
 # soup = BeautifulSoup(html_doc)
 # print(soup.prettify())
