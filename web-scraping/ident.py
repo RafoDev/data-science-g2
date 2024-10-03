@@ -1,17 +1,5 @@
-import os
 import requests
 from bs4 import BeautifulSoup
-from dotenv import load_dotenv
-from mysql import connector
-
-load_dotenv()
-
-config = {
-  "host":"localhost",
-  "user":"root",
-  "password": os.getenv("DB_PASSWORD"),
-  "database": "db_codigo"
-}
 
 url = f"https://listado.mercadolibre.com.pe/teclados"
 
@@ -75,8 +63,8 @@ def get_products(query):
     products.append((
       product_title,
       product_price,
-      product_discount,
       product_free_shipping,
+      product_discount,
       product_rating,
       product_reviews,
       product_variations,
@@ -85,39 +73,8 @@ def get_products(query):
 
   return products
 
-def save_products(products):
-	with connector.connect(**config) as db:
-		with db.cursor() as cursor:
-			try: 
-				cursor.execute("""
-					create table product(
-						id int primary key auto_increment,
-						title varchar(200) unique,
-						price float,
-            discount int,
-						free_shipping bool,
-						rating float,
-						reviews int,
-						variations int,
-						best_seller bool
-					)
-				""")
-				db.commit()
-			except Exception as error:
-				print("error: ", error)
-
-			query_insert = """
-				insert into product(title, price, discount, free_shipping, rating, reviews, variations, best_seller)
-				values (%s,%s,%s,%s,%s,%s,%s,%s)
-			"""
-			try:
-				cursor.executemany(query_insert, products)
-				db.commit()
-			except Exception as error:
-				print("error: ", error)
-
-query = "razer"
+query = "laptop"
 products = get_products(query)
-save_products(products)
-
-			
+print(products)
+# soup = BeautifulSoup(html_doc)
+# print(soup.prettify())
