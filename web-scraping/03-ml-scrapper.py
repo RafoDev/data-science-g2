@@ -19,10 +19,10 @@ def get_file_content(filename):
 
 def get_products(query):
   url = f"https://listado.mercadolibre.com.pe/{query}"
-  # response = requests.get(url)
-  # html_doc = response.text
+  response = requests.get(url)
+  html_doc = response.text
 
-  html_doc = get_file_content("mercado-libre.html")
+  #html_doc = get_file_content("mercado-libre.html")
 
   html = BeautifulSoup(html_doc, "html.parser")
 
@@ -73,7 +73,8 @@ def get_products(query):
 
   return products
 
-products = get_products("teclado")
+query = "laptop"
+products = get_products(query)
 print(products)
 # soup = BeautifulSoup(html_doc)
 # print(soup.prettify())
