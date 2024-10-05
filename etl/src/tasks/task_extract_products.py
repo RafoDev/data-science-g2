@@ -4,6 +4,7 @@ from prefect import task
 
 @task(name="Extraer productos de Mercado Libre")
 def task_extract_products(query):
+  # URL DE LA PRIMERA PÁGINA DE BÚSQUEDA DE 'QUERY'
   url = f"https://listado.mercadolibre.com.pe/{query}"
   response = requests.get(url)
   html_doc = response.text

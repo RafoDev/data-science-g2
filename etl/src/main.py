@@ -11,7 +11,7 @@ TYPE_TASK = "update"
 # Definimos nuesto flujo de trabajo
 @flow(name="ETL Productos")
 def main_flow():
-  search = ["teclado", "mouse", "logitech"]
+  search = ["hyperx"]
   for query in search:
     products = task_extract_products(query)
     if TYPE_TASK == "baseline":

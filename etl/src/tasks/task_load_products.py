@@ -58,5 +58,6 @@ def task_load_products_update(products):
 			for product in products:
 				try:
 					cursor.execute(query_insert, product)
+					db.commit()
 				except Exception as error:
 					print("error: ", error)
