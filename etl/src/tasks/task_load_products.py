@@ -13,7 +13,7 @@ config = {
 }
 
 @task(name="Limpieza y carga de productos en la bd")
-def task_load_products(products):
+def task_load_products_baseline(products):
 	with connector.connect(**config) as db:
 		with db.cursor() as cursor:
 			try:
@@ -46,3 +46,17 @@ def task_load_products(products):
 				db.commit()
 			except Exception as error:
 				print("error: ", error)
+				
+@task(name="Cargar nuevos productos en la bd")
+def task_load_products_update(products):
+	with connector.connect(**config) as db:
+		with db.cursor() as cursor:
+			query_insert = """
+				insert into product(title, price, discount, free_shipping, rating, reviews, variations, best_seller)
+				values (%s,%s,%s,%s,%s,%s,%s,%s)
+			"""
+			for product in products:
+				try:
+					cursor.execute(query_insert, product)
+				except Exception as error:
+					print("error: ", error)
