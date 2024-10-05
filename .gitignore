@@ -2,3 +2,4 @@ venv/
 .env
 env/
 *.html
+__pycache__/
