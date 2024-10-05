@@ -16,7 +16,7 @@ def proccess_data(data):
 def show_results(data):
   print("Data procesada ", data)
 
-@flow(name="Flujo básico")
+@flow(name="Flujo básico", log_prints=True)
 def main_flow():
   data = get_data()
   results = proccess_data(data)

@@ -1,4 +1,4 @@
-# En caso no se inicie Prefect
+# Para iniciar Prefect
 
 ```bash
 prefect server stop
