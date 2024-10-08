@@ -34,5 +34,8 @@ def task_extract_dni(dni):
       nombres = data["nombres"]
       apellidos = data["apellido_paterno"] + " " + data["apellido_materno"]
       return (nombres, apellidos)
+    else:
+      # TODO: handle_invalid_dni()
+      pass
   else:
     print("error: ", response.status_code)
