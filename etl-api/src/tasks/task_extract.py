@@ -4,7 +4,7 @@ from config import config
 import requests
 from .utils import handle_invalid_dni
 
-@task(name="Extraer info de csv")
+@task(name="Extraer data de csv")
 def task_extract_csv(filename):
   data = []
   with open(filename, "r") as csv_file:
@@ -15,7 +15,7 @@ def task_extract_csv(filename):
   
   return data
 
-@task(name="Extraer data de dni")
+@task(name="Extraer data de dni (api)")
 def task_extract_dni(dni):
   token = config.API_TOKEN
   headers = {
