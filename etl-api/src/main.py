@@ -1,7 +1,7 @@
 from prefect import flow
 from tasks.tasks_utils import task_init_table, task_get_user_from_db
 from tasks.task_extract import task_extract_csv, task_extract_dni
-from tasks.utils import validate_dni
+from tasks.utils import validate_dni, handle_invalid_dni
 
 BASELINE_TASKS = False
 DATA_PATH = "./resources/user.csv"
@@ -25,8 +25,7 @@ def main_flow():
         user_data = (dni, *api_user_data, celular)
         #TODO: task_load_user(user_data)
     else:
-    # TODO: handle_invalid_dni()
-      pass
-  
+      handle_invalid_dni(dni)
+
 if __name__ == "__main__":
   main_flow()

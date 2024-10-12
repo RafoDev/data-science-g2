@@ -2,6 +2,7 @@ import csv
 from prefect import task
 from config import config
 import requests
+from .utils import handle_invalid_dni
 
 @task(name="Extraer info de csv")
 def task_extract_csv(filename):
@@ -35,7 +36,6 @@ def task_extract_dni(dni):
       apellidos = data["apellido_paterno"] + " " + data["apellido_materno"]
       return (nombres, apellidos)
     else:
-      # TODO: handle_invalid_dni()
-      pass
+      handle_invalid_dni(dni)
   else:
     print("error: ", response.status_code)
