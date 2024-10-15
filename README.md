@@ -12,3 +12,4 @@ Para acceder a los diferentes módulos, puedes cambiar a la rama correspondiente
 
 - `modulo1` - Introducción al Data Science
 - `modulo2` - Data Science Toolkit
+- `modulo3` - Visualización de Datos
