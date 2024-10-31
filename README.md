@@ -6,6 +6,7 @@
 4. [Matplotlib](/matplotlib/)
 5. [Seaborn](/seaborn/)
 6. [EDA](/EDA/)
+7. [Reto](/reto/)
 
 ## Temas extra o repasos
 * [Carpeta de Google Drive](https://drive.google.com/drive/folders/1Cf8EbODsXpjJnqDsH0KKSQubqw1J_CbF?usp=sharing)
