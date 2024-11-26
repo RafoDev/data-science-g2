@@ -1,15 +1,16 @@
-# Bootcamp de Data Science
+# Módulo 5 - Machine Learning Clásico y Avanzado
 
-Este repositorio contiene los recursos teóricos y prácticos que utilizaremos a lo largo del bootcamp.
+## Regresiones
 
-## Estructura del Repositorio
-- **Rama `main`**: Contiene este archivo README y servirá como punto de referencia. 
-- **Ramas por Módulo**: Cada módulo está almacenado en una rama separada. A continuación se describe como acceder a los módulos.
+- [Regresión Lineal Simple](./01-ml-regresion-lineal.ipynb)
+- [Regresión Lineal Múltiple](./02-ml-regresion-lineal-multiple.ipynb)
+- [Regresión Lineal Múltiple (ejercicio)](./03-ml-regresion-lineal-ejercicio.ipynb)
+- [Regresión Lineal Simple + IQR](./04-ml-regresion-lineal-ejercicio-categoricas.ipynb)
 
-## Acceso a los Módulos
+## Material Extra
 
-Para acceder a los diferentes módulos, puedes cambiar a la rama correspondiente. A continuación, se listan las ramas disponibles:
+- [Carpeta de Google Drive](https://drive.google.com/drive/folders/1Cf8EbODsXpjJnqDsH0KKSQubqw1J_CbF?usp=sharing)
 
-- `modulo1` - Introducción al Data Science
-- `modulo2` - Data Science Toolkit
-- `modulo3` - Visualización de Datos
+## Data
+
+- [data](/data/)
