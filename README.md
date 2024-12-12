@@ -7,6 +7,10 @@
 - [Regresión Lineal Múltiple (ejercicio)](./03-ml-regresion-lineal-ejercicio.ipynb)
 - [Regresión Lineal Simple + IQR](./04-ml-regresion-lineal-ejercicio-categoricas.ipynb)
 
+## Reto
+
+- [Análisis Estadístico II](./reto/)
+
 ## Material Extra
 
 - [Carpeta de Google Drive](https://drive.google.com/drive/folders/1Cf8EbODsXpjJnqDsH0KKSQubqw1J_CbF?usp=sharing)
