@@ -19,8 +19,8 @@ El reto consiste en realizar un análisis estadístico del dataset [Remote Work 
 
 ## Extra
 
-1. Parametrizar el árbol de decisión y random forest. Con el objetivo de demostrar la aparición de overfitting y de mostrar los mejores parámetros.
+Parametrizar el árbol de decisión y random forest. Con el objetivo de demostrar la aparición de overfitting y de mostrar los mejores parámetros.
 
 ## Fecha de entrega
 
-- _Por definir_.
+- 22/12/2024 - 10:59 am.
