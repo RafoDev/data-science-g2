@@ -4,7 +4,7 @@ El reto consiste en realizar un análisis estadístico del dataset [Remote Work 
 
 ## Objetivos
 
-1. Tratar datos faltantes (imputación).
+1. Tratar datos faltantes (imputación). [[1](/01-ml-regresion-lineal.ipynb), [2](https://colab.research.google.com/drive/1idaZioy0_4PBux84roI20P6z9PCuBaCJ?authuser=1#scrollTo=A32ja537hen_)]
 2. Codificación de variables categóricas.
 3. Escalado de la data.
 4. Balancear las clases (Oversampling ó Undersampling).
