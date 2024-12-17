@@ -1,6 +1,6 @@
 # Análisis Estadístico II
 
-El reto consiste en realizar un análisis estadístico del dataset [Remote Work and Mental Health](https://www.kaggle.com/code/mustafashoukat/remote-work-and-mental-health/input).
+El reto consiste en realizar un análisis estadístico del dataset [Remote Work and Mental Health](https://drive.google.com/file/d/193rVeluqfOiTP_HliyR63XpWJwrk1BKB/view?usp=sharing).
 
 ## Objetivos
 
