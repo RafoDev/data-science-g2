@@ -1,15 +1,37 @@
-# Módulo 4 - Estadística y Diseño Experimental
+# Comandos de Docker
 
-1. [Regresiones](/regresiones/)
-2. [Imputación](/imputacion/)
-3. [Faltantes](/faltantes/)
-4. [Reto](/reto/)
+- Para instalar una imágen
 
-## Material Extra
+```bash
+docker pull nginx
+```
 
-- [Carpeta de Google Drive](https://drive.google.com/drive/folders/1Cf8EbODsXpjJnqDsH0KKSQubqw1J_CbF?usp=sharing)
-- [extra](/extra/)
+- Para crear un contenedor
 
-## Data
+```bash
+docker run -d -p 80:80 --name mi-nginx nginx
+```
 
-- [data](/data/)
+- Para parar un contenedor
+
+```bash
+docker stop mi-nginx
+```
+
+- Para acceder al contenedor
+
+```bash
+docker exec -it mi-nginx //bin//sh
+```
+
+- Para borrar un contenedor
+
+```bash
+docker rm mi-nginx
+```
+
+- Para crear un volumen
+
+```bash
+docker run -d --rm -p 80:80 -v C:/Users/ASUS/tecsup-codigo/data-science-g2/html:/usr/share/nginx/html --name nginx-codigo nginx:alpine
+```
