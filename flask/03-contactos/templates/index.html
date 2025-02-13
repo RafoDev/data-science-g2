@@ -1,0 +1,9 @@
+{% extends 'layout.html' %} {% block content %}
+<h1>Contactos</h1>
+<div>
+  {% for contacto in contactos %}
+  <img src="{{contacto.picture['large']}}" alt="" />
+  <p>{{contacto.name["first"]}}</p>
+  {% endfor %}
+</div>
+{% endblock %}
