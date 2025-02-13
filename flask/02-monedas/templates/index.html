@@ -12,6 +12,17 @@
     </style>
   </head>
   <body>
+    <h1>Convertidor de monedas</h1>
+
+    <form method="POST">
+      <input type="text" name="monto_origen" value="0" />
+      <input type="submit" value="Convertir" />
+    </form>
+
+    {% if monto_destino > 0%}
+    <h3>El monto en Dolares es {{monto_destino}}</h3>
+    {% endif %}
+
     <footer>
       <p>By <strong>{{author}}</strong></p>
     </footer>
