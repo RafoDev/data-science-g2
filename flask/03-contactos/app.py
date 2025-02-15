@@ -11,6 +11,8 @@ def index():
 
 @app.route("/hombres")
 def hombres():
-  return render_template("hombres.html")
+  url = "https://randomuser.me/api/?results=10&gender=male"
+  lista_contactos = requests.get(url).json()
+  return render_template("hombres.html", contactos=lista_contactos["results"])
 
 app.run(debug=True)

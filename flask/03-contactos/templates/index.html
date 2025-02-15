@@ -3,7 +3,7 @@
 <div>
   {% for contacto in contactos %}
   <img src="{{contacto.picture['large']}}" alt="" />
-  <p>{{contacto.name["first"]}}</p>
+  <p>{{contacto.name["first"]}} {{contacto.name["last"]}}</p>
   {% endfor %}
 </div>
 {% endblock %}
