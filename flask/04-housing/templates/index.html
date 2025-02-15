@@ -4,8 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Housing Price Predictor</title>
+    <style>
+      body {
+        font-family: "Courier New", Courier, monospace;
+        background-color: #282828;
+        color: #eaeaea;
+      }
+    </style>
   </head>
   <body>
-    <h1>Predictor</h1>
+    <h1>🏠 Predictor 🏠</h1>
+    <form method="post">
+      <label for="rooms">Number of rooms: </label>
+      <input type="number" id="rooms" name="rooms" required />
+      <button type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+    <h3>The price of the house could be {{prediction}}💲</h3>
+    {% endif %}
   </body>
 </html>
