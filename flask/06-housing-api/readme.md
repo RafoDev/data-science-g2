@@ -17,3 +17,14 @@ Remover '.example' de `.env.example`.
 ```bash
 flask run
 ```
+
+### Endpoints
+
+- `http://127.0.0.1:5000/housing` (GET): Para obtener todos los registros
+- `http://127.0.0.1:5000/housing/<id>` (GET): Para obtener el registro que coincida con el id
+- `http://127.0.0.1:5000/housing` (POST): Para crear un nuevo registro. Es necesario pasar un body con la forma:
+  ```json
+  {
+    "rooms": 8
+  }
+  ```
