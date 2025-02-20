@@ -18,6 +18,25 @@ class Insurance(db.Model):
 
   def __init__(self, age):
     self.age = age
+  
+  def save(self):
+    ml_insurance = InsuranceModel()
+    self.charges = ml_insurance.predict(self.age)
+    if not self.id:
+      db.session.add(self)
+    db.session.commit()
+  
+  @staticmethod
+  def get_all():
+    return Insurance.query.all()
+  
+  @staticmethod
+  def get_by_id(id):
+    return Insurance.query.get(id)
+
+  def delete(self):
+    db.session.delete(self)
+    db.session.commit()
 
 db.create_all()
 
@@ -38,14 +57,7 @@ def index():
 def set_data():
   age = request.json["age"]
   new_insurance = Insurance(age)
-
-  hmodel = InsuranceModel()
-  charges = hmodel.predict(age)
-  new_insurance.charges = charges
-
-  db.session.add(new_insurance)
-  db.session.commit()
-
+  new_insurance.save()
   data_schema = InsuranceSchema()
 
   context = {
@@ -57,7 +69,7 @@ def set_data():
 
 @app.route('/insurance', methods=["GET"])
 def get_data():
-  data = Insurance.query.all()
+  data = Insurance.get_all()
   data_schema = InsuranceSchema(many=True)
 
   context = {
@@ -70,7 +82,7 @@ def get_data():
 
 @app.route('/insurance/<id>')
 def get_data_by_id(id):
-  data = Insurance.query.get(id)
+  data = Insurance.get_by_id(id)
   data_schema = InsuranceSchema()
 
   context = {
@@ -86,13 +98,9 @@ def get_data_by_id(id):
 def update_data(id):
   age = request.json["age"]
 
-  updated_insurance = Insurance.query.get(id)
+  updated_insurance = Insurance.get_by_id(id)
   updated_insurance.age = age
-  hmodel = InsuranceModel()
-  charges = hmodel.predict(age)
-  updated_insurance.charges = charges
-  db.session.commit()
-
+  updated_insurance.save()
   data_schema = InsuranceSchema()
 
   context = {
@@ -105,9 +113,8 @@ def update_data(id):
 @app.route("/insurance/<id>", methods=["DELETE"])
 def delete_data(id):
 
-  deleted_insurance = Insurance.query.get(id)
-  db.session.delete(deleted_insurance)
-  db.session.commit()
+  deleted_insurance = Insurance.get_by_id(id)
+  deleted_insurance.delete()
 
   data_schema = InsuranceSchema()
 
