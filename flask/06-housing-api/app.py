@@ -94,3 +94,19 @@ def update_data(id):
     "content": data_schema.dump(updated_housing)
   }
   return jsonify(context)
+
+@app.route("/housing/<id>", methods=["DELETE"])
+def delete_data(id):
+
+  deleted_housing = Housing.query.get(id)
+  db.session.delete(deleted_housing)
+  db.session.commit()
+
+  data_schema = HousingSchema()
+
+  context = {
+    "status": True,
+    "message": "Housing deleted!",
+    "content": data_schema.dump(deleted_housing)
+  }
+  return jsonify(context)
