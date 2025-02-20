@@ -74,3 +74,23 @@ def get_data_by_id(id):
   }
 
   return context
+
+
+@app.route("/housing/<id>", methods=["PUT"])
+def update_data(id):
+  rooms = request.json["rooms"]
+  price = request.json["price"]
+
+  updated_housing = Housing.query.get(id)
+  updated_housing.rooms = rooms
+  updated_housing.price = price
+  db.session.commit()
+
+  data_schema = HousingSchema()
+
+  context = {
+    "status": True,
+    "message": "Housing updated!",
+    "content": data_schema.dump(updated_housing)
+  }
+  return jsonify(context)

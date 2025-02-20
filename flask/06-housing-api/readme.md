@@ -28,3 +28,10 @@ flask run
     "rooms": 8
   }
   ```
+- `http://127.0.0.1:5000/housing/<id>` (PUT): Para crear actualizar un registro. Es necesario pasar un body con la forma:
+  ```json
+  {
+    "rooms": 5,
+    "price": 2000
+  }
+  ```
