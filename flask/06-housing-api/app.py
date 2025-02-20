@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
+from ml_model import HousingModel
 
 app = Flask(__name__)
 app.app_context().push()
@@ -37,6 +38,11 @@ def index():
 def set_data():
   rooms = request.json["rooms"]
   new_housing = Housing(rooms)
+
+  hmodel = HousingModel()
+  price = hmodel.predict(rooms)
+  new_housing.price = price
+
   db.session.add(new_housing)
   db.session.commit()
 
@@ -79,10 +85,11 @@ def get_data_by_id(id):
 @app.route("/housing/<id>", methods=["PUT"])
 def update_data(id):
   rooms = request.json["rooms"]
-  price = request.json["price"]
 
   updated_housing = Housing.query.get(id)
   updated_housing.rooms = rooms
+  hmodel = HousingModel()
+  price = hmodel.predict(rooms)
   updated_housing.price = price
   db.session.commit()
 
