@@ -9,9 +9,11 @@ Este repositorio contiene los recursos teóricos y prácticos que utilizaremos a
 
 ## Acceso a los Módulos
 
-Para acceder a los diferentes módulos, puedes cambiar a la rama correspondiente.
+Comandos para clonar el repositorio y moverse entre ramas.
 
 ```shell
+git clone https://github.com/RafoDev/data-science-g2.git
+cd data-science-g2
 git fetch origin
 git switch modulo1
 ```
