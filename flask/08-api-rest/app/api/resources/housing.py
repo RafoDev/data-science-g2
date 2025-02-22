@@ -22,7 +22,19 @@ class HousingResource(Resource):
   
   def post(self):
     data = request.get_json()
-    rooms = data["rooms"]
-    return {"test": rooms}
+    rooms = int(data["rooms"])
+
+    housing = Housing(rooms)
+    housing.save()
+
+    data_schema = HousingSchema()
+
+    context = {
+      "status": True,
+      "message": "Registro creado",
+      "content": data_schema.dump(housing)
+    }
+    return context
+  
 
 api_housing.add_resource(HousingResource,"/housing")

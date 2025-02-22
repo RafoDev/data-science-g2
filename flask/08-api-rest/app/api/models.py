@@ -18,7 +18,7 @@ class Housing(db.Model):
     return Housing.query.get(id)
   
   def save(self):
-    ml_housing = HousingModel
+    ml_housing = HousingModel()
     self.price = ml_housing.predict(self.rooms)
     if not self.id:
       db.session.add(self)
