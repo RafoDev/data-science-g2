@@ -1,4 +1,4 @@
-from extensions import ma
+from ..extensions import ma
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 
 from .models import Housing

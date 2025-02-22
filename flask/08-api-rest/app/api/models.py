@@ -1,4 +1,4 @@
-from extensions import db
+from ..extensions import db
 
 class Housing(db.Model):
   id = db.Column(db.Integer, primary_key=True)
