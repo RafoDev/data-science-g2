@@ -1,2 +1,7 @@
 flask
 flask-restful
+python-dotenv
+flask-sqlalchemy
+flask-marshmallow
+marshmallow-sqlalchemy
+mysqlclient
