@@ -1,1 +1,3 @@
 fastapi[standard]
+sqlmodel
+mysql-connector-python
