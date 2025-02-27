@@ -49,3 +49,27 @@ async def get_housing():
   with Session(engine) as session:
     housings = session.exec(select(Housing)).all()
     return housings
+
+@app.get("/housing/{id}", response_model=HousingResponse)
+async def get_housing_by_id(id: int):
+  with Session(engine) as session:
+    housing = session.get(Housing, id)
+    return housing
+
+@app.put("/housing/{id}", response_model=HousingResponse)
+async def update_housing_by_id(id: int, housing: HousingCreate):
+  with Session(engine) as session:
+    update_housing = session.get(Housing, id)
+    update_housing.rooms = housing.rooms
+    update_housing.price = housing.price
+    session.commit()
+    session.refresh(update_housing)
+    return update_housing
+  
+@app.delete("/housing/{id}", response_model=HousingResponse)
+async def delete_housing_by_id(id: int):
+  with Session(engine) as session:
+    delete_housing = session.get(Housing, id)
+    session.delete(delete_housing)
+    session.commit()
+    return delete_housing
