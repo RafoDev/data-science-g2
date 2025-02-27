@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from sqlmodel import create_engine, SQLModel, Field
+from sqlmodel import create_engine, SQLModel, Field, Session
 from pydantic import BaseModel
 
 DATABASE_URI = "mysql+mysqlconnector://root:1234@localhost/ml_db"
@@ -14,12 +14,13 @@ class HousingCreate(BaseModel):
   rooms: int
   price: float
 
-class HousingCreate(HousingCreate):
+class HousingResponse(HousingCreate):
   id: int
 
 SQLModel.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
 @app.get("/")
 async def root():
   return {"message": "Mi primer api con FastApi"}
@@ -32,3 +33,13 @@ async def saludo(nombre: str):
 async def suma(n1: int, n2: int):
   resultado = n1 + n2
   return {"message": f"La suma de {n1} y {n2} es {resultado}"}
+
+@app.post("/housing", response_model=HousingResponse)
+async def create_housing(housing: HousingCreate):
+  with Session(engine) as session:
+    new_housing = Housing(**housing.model_dump())
+    session.add(new_housing)
+    session.commit()
+    session.refresh(new_housing)
+
+    return new_housing
