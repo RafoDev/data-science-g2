@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from sqlmodel import create_engine, SQLModel, Field, Session, select
 from pydantic import BaseModel
-from typing import List
 
 DATABASE_URI = "mysql+mysqlconnector://root:1234@localhost/ml_db"
 engine = create_engine(DATABASE_URI, echo=True)
@@ -45,7 +44,7 @@ async def create_housing(housing: HousingCreate):
 
     return new_housing
 
-@app.get("/housing", response_model=List[HousingResponse])
+@app.get("/housing", response_model=list[HousingResponse])
 async def get_housing():
   with Session(engine) as session:
     housings = session.exec(select(Housing)).all()
