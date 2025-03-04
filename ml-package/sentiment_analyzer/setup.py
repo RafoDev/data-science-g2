@@ -9,7 +9,7 @@ setup(
   packages=find_packages(),
   include_package_data=True,
   package_data={
-    "sentiment_analyzer":["../model/*"]
+    "sentiment_analyzer":["model/*"]
   },
   install_requires=[
     "transformers==4.49.0",

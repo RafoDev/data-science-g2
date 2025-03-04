@@ -1,4 +1,4 @@
-from analyzer.analyzer import SentimentAnalyzer
+from sentiment_analyzer.sentiment_analyzer import SentimentAnalyzer
 
 analyzer = SentimentAnalyzer()
 
