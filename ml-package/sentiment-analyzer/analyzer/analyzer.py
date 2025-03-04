@@ -26,7 +26,7 @@ class SentimentAnalyzer:
     sentiment_labels = {0: "Muy negativo", 1:"Negativo", 2:"Neutral", 3: "Positivo", 4:"Muy positivo"}
     return sentiment_labels[torch.argmax(probabilities, dim=-1).item()]
 
-text = "I absolutely love the new design of this app!"
-analyzer = SentimentAnalyzer()
-sentiment = analyzer.predict_sentiment(text)
-print(f"{text} -> {sentiment}")
+# text = "I absolutely love the new design of this app!"
+# analyzer = SentimentAnalyzer()
+# sentiment = analyzer.predict_sentiment(text)
+# print(f"{text} -> {sentiment}")
