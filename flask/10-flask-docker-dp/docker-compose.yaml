@@ -1,0 +1,12 @@
+services:
+  flask:
+    image: image-flask-sentiment-analysis
+    build: .
+    container_name: container-flask-sentiment-analysis
+    ports:
+      - "8020:8000"
+    volumes:
+      - ./:/app
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_DEBUG=1

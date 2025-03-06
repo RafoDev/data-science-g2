@@ -1,2 +1,2 @@
 flask
-.\libs\sentiment_analyzer-1.0.0-py3-none-any.whl
+./libs/sentiment_analyzer-1.0.0-py3-none-any.whl
