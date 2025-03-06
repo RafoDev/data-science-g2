@@ -11,3 +11,9 @@ docker build -t flask-docker .
 ```shell
 docker run -d -p 8000:8000 --name flask-docker-container flask-docker
 ```
+
+# Para ejecutar el docker-compose
+
+```shell
+docker compose -p flask-docker-compose up -d
+```

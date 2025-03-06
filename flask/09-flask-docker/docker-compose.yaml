@@ -1,0 +1,12 @@
+services:
+  flask:
+    image: image-flask-docker-compose
+    build: .
+    container_name: container-flask-docker-compose
+    ports:
+      - "8010:8000"
+    volumes:
+      - ./:/app
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_DEBUG=1
