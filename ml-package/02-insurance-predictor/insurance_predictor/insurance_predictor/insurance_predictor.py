@@ -16,3 +16,4 @@ class InsuranceModel:
     prediction_scaled = self.model.predict(edad_scaled)
     prediction = round(self.scaler_y.inverse_transform(prediction_scaled).item(),2)
     return prediction
+  
