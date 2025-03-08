@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY requirements.txt .
 
+COPY ./libs ./libs
+
 RUN pip install -r requirements.txt
 
 COPY . .
