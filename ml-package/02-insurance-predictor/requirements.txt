@@ -1,3 +1,5 @@
 joblib
 numpy
 scikit-learn
+wheel
+setuptools
