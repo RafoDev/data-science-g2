@@ -1,28 +1,72 @@
-# Bootcamp de Data Science
+# Módulo 9: Proyecto Final
 
-Este repositorio contiene los recursos teóricos y prácticos que utilizaremos a lo largo del bootcamp.
+## Implementación y Despliegue de Modelos de ML/DP
 
-## Estructura del Repositorio
+El trabajo final consistirá en desarrollar un modelo de machine learning y/o Deep Learning para resolver un problema comercial específico, y llevarlo desde su fase de planteamiento en un notebook hasta su implementación como una API funcional que pueda ser consumida por otras aplicaciones.
 
-- **Rama `main`**: Contiene este archivo README y servirá como punto de referencia.
-- **Ramas por Módulo**: Cada módulo está almacenado en una rama separada. A continuación se describe como acceder a los módulos.
+## Estructura del Proyecto
 
-## Acceso a los Módulos
+### Propuesta Inicial
 
-Comandos para clonar el repositorio y moverse entre ramas.
+El estudiante deberá presentar una propuesta que incluya:
 
-```shell
-git clone https://github.com/RafoDev/data-science-g2.git
-cd data-science-g2
-git fetch origin
-git switch modulo1
-```
+- Descripción del problema comercial seleccionado, puede ser uno de los siguientes o proponer uno nuevo:
+  - Predicción de abandono de clientes (churn prediction)
+  - Segmentación de clientes para estrategias de marketing
+  - Optimización de precios dinámicos
+  - Análisis de sentimiento de reseñas
+  - Predicción de demanda y gestión de inventario
+  - Detección de fraude
+  - Recomendación de productos
+  - Pronóstico de ventas
+  - Optimización de rutas de entrega
+  - Análisis de comportamiento del cliente
+- Conjunto de datos a utilizar (fuente, características, etc)
 
-- `modulo1` - Introducción al Data Science
-- `modulo2` - Data Science Toolkit
-- `modulo3` - Visualización de Datos
-- `modulo4` - Estadística y Diseño Experimental
-- `modulo5` - Machine Learning Clásico y Avanzado
-- `modulo6` - Deep Learning
-- `modulo7` - Procesamiento del Lenguaje Natural (pendiente)
-- `modulo8` - Ingeniería en Machine Learning
+## Desarrollo del Modelo
+
+### Formulación de Modelos
+
+- Limpieza y preprocesamiento de datos
+- Análisis estadístico descriptivo
+- Visualización de relaciones entre variables
+- Selección de algoritmos apropiados para el problema
+- Definición de variables predictoras y objetivo
+- Implementación de modelos base (fine tunning opcional)
+
+## Despliegue del Modelo
+
+#### Serialización del Modelo
+
+- Exportación del modelo entrenado
+- Documentación de versiones y dependencias
+
+#### Desarrollo de Paquete Python
+
+- Creación de estructura de paquete con setup.py
+- Implementación de funciones para pre-procesamiento y predicción
+- Documentación del código y funcionalidades
+
+#### Desarrollo de API
+
+- Implementación usando Flask o FastAPI
+- Endpoints para predicción
+- Validación de entradas y manejo de errores
+- Pruebas de funcionamiento y rendimiento
+
+#### Dockerización
+
+- Creación de Dockerfile
+- Configuración de entorno y dependencias
+- Pruebas de contenerización
+- Instrucciones de despliegue
+
+## Entregables:
+
+Repositorio de GitHub con:
+
+1. Notebook del modelo: Completamente documentado y con la propuesta inicial al comienzo. Debe incluir el modelo y el dataset (cuando sea aplicable).
+2. Paquete del modelo: Implementación del modelo como un paquete de Python instalable.
+3. API dockerizada: Implementación del modelo como un servicio web dentro de un contenedor Docker.
+
+### Fecha de entrega: 26-03-2025
